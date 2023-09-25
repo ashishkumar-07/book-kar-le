@@ -1,0 +1,5 @@
+CREATE DATABASE movie_db;
+CREATE DATABASE booking_db;
+CREATE DATABASE search_db;
+CREATE DATABASE payment_db;
+CREATE DATABASE offer_db;
