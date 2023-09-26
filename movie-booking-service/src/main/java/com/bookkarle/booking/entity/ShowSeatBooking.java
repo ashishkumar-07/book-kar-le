@@ -4,6 +4,7 @@ package com.bookkarle.booking.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.sql.Timestamp;
 import java.time.ZonedDateTime;
 
 @Entity
@@ -17,10 +18,14 @@ public class ShowSeatBooking {
     private long showId;
     private String rowNumber;
     private String seatNumber;
+    @Enumerated(EnumType.STRING)
     private SeatBookingStatus bookingStatus;
     private String bookingOrderId;
 
     private ZonedDateTime updatedAt;
+
+    @Version
+    private Timestamp versionNum;
 
     @Override
     public boolean equals(Object object) {

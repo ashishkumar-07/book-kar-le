@@ -4,13 +4,17 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Builder;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.UUID;
 
 @Data
 @Entity
+@Builder
+
 public class BookingOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -18,18 +22,17 @@ public class BookingOrder {
     private String externalBookingId;
     private String userId;
     private BookingOrderStatus orderStatus;
-    private Long cityId;
-    private Long theatreId;
-    private Long auditoriumId;
-    private Long movieId;
-    private String language;
-    private Long showId;
+    private String showId;
+
+    private List<Long> seatIds;
     private Integer ticketQuantity;
     private Long offerId;
     private BigDecimal totalTicketPrice;
     private BigDecimal offerAmount;
     private BigDecimal amountAfterOffer;
-
+    private BigDecimal convenienceFee;
+    private BigDecimal baseAmountOfFee;
+    private BigDecimal taxOnFee;
 
     private String paymentGatewayId;
     private String paymentGatewayOrderId;
@@ -38,4 +41,8 @@ public class BookingOrder {
 
     private String ticketQrCodePath;
     private String ticketImagePath;
+
+
+
+
 }

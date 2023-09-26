@@ -6,6 +6,5 @@ import java.util.List;
 
 @Data
 public class HoldRequest {
-    Long showId;
-    List<Long> showSeatId;
+    List<Long> showSeatIds;
 }

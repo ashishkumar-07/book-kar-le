@@ -2,8 +2,10 @@ package com.bookkarle.booking.model;
 
 import lombok.Data;
 
+import java.util.UUID;
+
 @Data
 public class CompleteOrderRequest {
-    private String bookingOrderId;
+    private UUID bookingOrderId;
     private String paymentGatewayTransactionId;
 }
