@@ -29,4 +29,7 @@ public interface BookingApi {
     @Operation(summary = "Fetch ticket details of particular order")
     public BookingOrder fetchTicket(String userId, String BookingOrderId);
 
+    @Operation(summary = "Cancel a particular booking")
+    public void cancelBooking(String userId, String BookingOrderId);
+
 }

@@ -15,6 +15,7 @@ public class BookingOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID bookingId;
+    private String externalBookingId;
     private String userId;
     private BookingOrderStatus orderStatus;
     private Long cityId;

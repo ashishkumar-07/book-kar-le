@@ -53,4 +53,9 @@ public class BookingApiImpl implements BookingApi {
     public BookingOrder fetchTicket(@PathVariable String userId, String BookingOrderId) {
         return null;
     }
+
+    @Override
+    public void cancelBooking(String userId, String BookingOrderId) {
+        ;
+    }
 }

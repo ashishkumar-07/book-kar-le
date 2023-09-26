@@ -9,7 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @OpenAPIDefinition(info = @Info(title = "SearchService",version = "0.1",description = "Provides APIs which helps selecting a movie show for booking"))
 public class MovieSearchServiceApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(MovieSearchServiceApplication.class);
+
+
     }
 }
