@@ -1,4 +1,4 @@
-package com.bookkarle.booking.service;
+package com.bookkarle.booking.payment;
 
 import com.bookkarle.booking.model.PaymentOrder;
 import com.bookkarle.booking.model.PaymentOrderResponse;

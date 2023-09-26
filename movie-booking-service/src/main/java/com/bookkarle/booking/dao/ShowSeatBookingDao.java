@@ -22,11 +22,6 @@ public interface ShowSeatBookingDao extends JpaRepository<ShowSeatBooking,Long> 
             """)
     int updateBySeatBookingStatusAndShowSeatIdIn(String bookStatus, String currentStatus,List<Long> showSeatIds);
 
-    @Query(nativeQuery = true, value = """
-            update show_seat_booking set booking_status=:bookStatus 
-            where booking_status=:currentStatus
-            and show_seat_id in(:showSeatIds)
-            """)
-    List<ShowSeatBooking> findBySeatBookingStatusAndShowSeatIdIn(SeatBookingStatus seatBookingStatus, List<Long> seats);
+    List<ShowSeatBooking> findByBookingStatusAndShowSeatIdIn(SeatBookingStatus seatBookingStatus, List<Long> seats);
 
 }

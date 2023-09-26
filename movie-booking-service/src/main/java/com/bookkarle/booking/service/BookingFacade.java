@@ -11,6 +11,7 @@ import com.bookkarle.booking.entity.SeatBookingStatus;
 import com.bookkarle.booking.entity.ShowSeatBooking;
 import com.bookkarle.booking.model.*;
 import com.bookkarle.booking.partner.PartnerFacade;
+import com.bookkarle.booking.payment.PaymentServiceInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,7 +50,7 @@ public class BookingFacade {
     @Transactional(rollbackFor = Exception.class)
     public CreateBookingOrderResponse createOrder(CreateBookingOrder order) {
 
-        List<ShowSeatBooking> seatsToBook = showSeatBookingDao.findBySeatBookingStatusAndShowSeatIdIn(SeatBookingStatus.HOLD, order.getSeatIds());
+        List<ShowSeatBooking> seatsToBook = showSeatBookingDao.findByBookingStatusAndShowSeatIdIn(SeatBookingStatus.HOLD, order.getSeatIds());
         if (seatsToBook.size() < order.getSeatIds().size()) {
             throw new BusinessValidationException("Few of the selected seats are not available now. Please try with new selection!");
         }
