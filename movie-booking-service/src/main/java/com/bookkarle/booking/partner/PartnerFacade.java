@@ -38,7 +38,7 @@ public class PartnerFacade {
     public void updateBookingInProgressPartnerSystem(List<ShowSeatBooking> seatsToBook, CreateBookingOrder order) {
         //Get the handler class,URL details from Partner_handler table
         PartnerApiInterface partnerApiInterface = (PartnerApiInterface)context.getBean("PVRApi");
-        
+
         //Prepare change Booking status DTO
         ChangeBookingStatusDto dto = ChangeBookingStatusDto.builder().bookingStatus(SeatBookingStatus.IN_PROGRESS)
                 //populate other details
