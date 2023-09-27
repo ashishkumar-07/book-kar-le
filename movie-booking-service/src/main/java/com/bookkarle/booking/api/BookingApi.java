@@ -4,9 +4,15 @@ import com.bookkarle.booking.entity.BookingOrder;
 import com.bookkarle.booking.entity.ShowSeatBooking;
 import com.bookkarle.booking.model.*;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import java.util.List;
 
+@Tag(
+
+        name = "Movie booking APIs",
+        description = "Following APIs are used to manage ticket booking"
+)
 public interface BookingApi {
 
     @Operation(summary = "Get seat layout of a particular show with seat status")

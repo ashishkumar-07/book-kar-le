@@ -1,4 +1,4 @@
-package com.bookkarle;
+package com.bookkarle.common.exception;
 
 public class NotFoundException extends RuntimeException{
     public NotFoundException(String message){

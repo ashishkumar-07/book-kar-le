@@ -1,4 +1,4 @@
-package com.bookkarle;
+package com.bookkarle.common.exception;
 
 import lombok.Data;
 

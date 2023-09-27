@@ -6,6 +6,7 @@ import com.bookkarle.search.model.MovieAvailableShowResponse;
 import com.bookkarle.search.model.TheatreAvailableMovieShows;
 import com.bookkarle.search.service.SearchMovieFacade;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/movies")
 @RequiredArgsConstructor
+@Tag(
+
+        name = "Movie Search APIs",
+        description = "Following APIs are used to display the theatre,movie and shows list for booking"
+)
 public class SearchMovieApi {
 
     private final SearchMovieFacade searchMovieFacade;

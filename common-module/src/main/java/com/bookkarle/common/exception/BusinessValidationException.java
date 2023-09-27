@@ -1,4 +1,4 @@
-package com.bookkarle;
+package com.bookkarle.common.exception;
 
 public class BusinessValidationException extends RuntimeException{
     public BusinessValidationException(String message){

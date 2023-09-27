@@ -1,8 +1,8 @@
 package com.bookkarle.booking.service;
 
-import com.bookkarle.BusinessValidationException;
-import com.bookkarle.NotFoundException;
-import com.bookkarle.OperationFailedException;
+import com.bookkarle.common.exception.BusinessValidationException;
+import com.bookkarle.common.exception.NotFoundException;
+import com.bookkarle.common.exception.OperationFailedException;
 import com.bookkarle.booking.dao.BookingOrderDao;
 import com.bookkarle.booking.dao.ShowSeatBookingDao;
 import com.bookkarle.booking.entity.BookingOrder;
@@ -90,7 +90,7 @@ public class BookingFacade {
 
 
     private void createOrderInPaymentGatewayAndSetPaymentDetails(BookingOrder order) {
-        PaymentOrderResponse paymentOrderResponse = paymentServiceInterface.createPaymentOrder(new PaymentOrder(order.getAmountAfterOffer(), order.getPaymentGatewayId()));
+        PaymentOrderResponse paymentOrderResponse = paymentServiceInterface.createPaymentOrder(order);
         setPaymentDetails(order, paymentOrderResponse);
     }
 

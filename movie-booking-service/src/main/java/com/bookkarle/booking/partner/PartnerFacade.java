@@ -1,7 +1,7 @@
 package com.bookkarle.booking.partner;
 
 
-import com.bookkarle.OperationFailedException;
+import com.bookkarle.common.exception.OperationFailedException;
 import com.bookkarle.booking.entity.BookingOrder;
 import com.bookkarle.booking.entity.SeatBookingStatus;
 import com.bookkarle.booking.entity.ShowSeatBooking;

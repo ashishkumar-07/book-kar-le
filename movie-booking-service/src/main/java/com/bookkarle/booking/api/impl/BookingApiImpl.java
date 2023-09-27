@@ -29,7 +29,7 @@ public class BookingApiImpl implements BookingApi {
              bookingFacade.blockSeat(holdRequest);
     }
 
-    @PostMapping("/place")
+    @PostMapping()
     @Override
     public CreateBookingOrderResponse createOrder(@RequestBody @Valid CreateBookingOrder order) {
         return bookingFacade.createOrder(order);
