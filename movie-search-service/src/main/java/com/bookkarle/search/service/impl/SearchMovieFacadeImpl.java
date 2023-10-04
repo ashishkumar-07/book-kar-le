@@ -2,7 +2,6 @@ package com.bookkarle.search.service.impl;
 
 
 import com.bookkarle.search.cache.CacheApi;
-import com.bookkarle.search.cache.InMemoryApiImpl;
 import com.bookkarle.search.dao.MovieDao;
 import com.bookkarle.search.entity.ActiveShow;
 import com.bookkarle.search.model.*;

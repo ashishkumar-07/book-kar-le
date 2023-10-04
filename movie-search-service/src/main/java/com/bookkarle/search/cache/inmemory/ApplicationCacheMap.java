@@ -1,4 +1,4 @@
-package com.bookkarle.search.cache;
+package com.bookkarle.search.cache.inmemory;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
