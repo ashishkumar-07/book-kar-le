@@ -123,7 +123,7 @@ public class BookingFacade {
 
     @Transactional(rollbackFor = Exception.class)
     public ConfirmOrderResponse confirmOrder(ConfirmOrderRequest order) {
-        BookingOrder bookingOrder = bookingOrderDao.findById(order.getBookingOrderId()).orElseThrow(() -> new BusinessValidationException("Booking ID was not found."));
+        BookingOrder bookingOrder = bookingOrderDao.findByBookingId(order.getBookingOrderId()).orElseThrow(() -> new BusinessValidationException("Booking ID was not found."));
         bookingOrder.setPaymentGatewayId(order.getPaymentGatewayId());
         createOrderInPaymentGatewayAndSetPaymentDetails(bookingOrder);
         bookingOrderDao.save(bookingOrder);
@@ -143,7 +143,7 @@ public class BookingFacade {
 
     @Transactional(rollbackFor = Exception.class)
     public CompleteOrderResponse completeOrder(CompleteOrderRequest request) {
-        BookingOrder order = bookingOrderDao.findById(request.getBookingOrderId()).orElseThrow(() -> new BusinessValidationException("Booking ID was not found."));
+        BookingOrder order = bookingOrderDao.findByBookingId(request.getBookingOrderId()).orElseThrow(() -> new BusinessValidationException("Booking ID was not found."));
         order.setPaymentGatewayTransactionId(request.getPaymentGatewayTransactionId());
         order.setOrderStatus(BookingOrderStatus.COMPLETED);
         partnerFacade.confirmOrder(order);

@@ -3,7 +3,9 @@ package com.bookkarle.booking.dao;
 
 import com.bookkarle.booking.entity.SeatBookingStatus;
 import com.bookkarle.booking.entity.ShowSeatBooking;
+import jakarta.persistence.LockModeType;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -22,6 +24,7 @@ public interface ShowSeatBookingDao extends JpaRepository<ShowSeatBooking,Long> 
             """)
     int updateBySeatBookingStatusAndShowSeatIdIn(String bookStatus, String currentStatus,List<Long> showSeatIds);
 
+    @Lock(LockModeType.OPTIMISTIC_FORCE_INCREMENT)
     List<ShowSeatBooking> findByBookingStatusAndShowSeatIdIn(SeatBookingStatus seatBookingStatus, List<Long> seats);
 
 }
